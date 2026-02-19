@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -258,7 +258,7 @@
       
       
       
-      <li><a href="https://github.com/OpenGit/qgis/edit/main/qgis/processing_toolbox.md" target="_blank"
+      <li><a href="https://github.com/OpenGit/qgis/edit/main/qgis/processing_toolbox.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="_sources/processing_toolbox.md" target="_blank"
+      <li><a href="_sources/processing_toolbox.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +315,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -419,16 +419,34 @@ document.write(`
 <section id="finding-algorithms">
 <h2>1. Finding Algorithms<a class="headerlink" href="#finding-algorithms" title="Link to this heading">#</a></h2>
 <p>To see all available tools:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">processing</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">processing</span>
 <span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">QgsApplication</span><span class="o">.</span><span class="n">processingRegistry</span><span class="p">()</span><span class="o">.</span><span class="n">algorithms</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">alg</span><span class="o">.</span><span class="n">id</span><span class="p">(),</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">alg</span><span class="o">.</span><span class="n">displayName</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">processing</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">QgsApplication</span><span class="o">.</span><span class="n">processingRegistry</span><span class="p">()</span><span class="o">.</span><span class="n">algorithms</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">alg</span><span class="o">.</span><span class="n">id</span><span class="p">(),</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">alg</span><span class="o">.</span><span class="n">displayName</span><span class="p">())</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;processing&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="running-a-tool">
 <h2>2. Running a Tool<a class="headerlink" href="#running-a-tool" title="Link to this heading">#</a></h2>
 <p>Let’s run a ‘Fixed Distance Buffer’.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">processing</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">processing</span>
 
 <span class="n">input_layer</span> <span class="o">=</span> <span class="s2">&quot;rivers.shp&quot;</span>
 <span class="n">output_layer</span> <span class="o">=</span> <span class="s2">&quot;buffered_rivers.shp&quot;</span>
@@ -449,11 +467,15 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output saved at: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;OUTPUT&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="chaining-tools-workflows">
 <h2>3. Chaining Tools (Workflows)<a class="headerlink" href="#chaining-tools-workflows" title="Link to this heading">#</a></h2>
 <p>You can use the output of one tool as the input for another.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Buffer</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Buffer</span>
 <span class="n">buffer_res</span> <span class="o">=</span> <span class="n">processing</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;native:buffer&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;INPUT&#39;</span><span class="p">:</span> <span class="s1">&#39;points.shp&#39;</span><span class="p">,</span> <span class="s1">&#39;DISTANCE&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span> <span class="s1">&#39;memory:buff&#39;</span><span class="p">})</span>
 
 <span class="c1"># Step 2: Centroids on the buffer</span>
@@ -462,6 +484,8 @@ document.write(`
 <span class="c1"># Add the final result to the project</span>
 <span class="n">QgsProject</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">addMapLayer</span><span class="p">(</span><span class="n">centroid_res</span><span class="p">[</span><span class="s1">&#39;OUTPUT&#39;</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
