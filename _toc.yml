@@ -1,0 +1,16 @@
+# Table of Contents
+format: jb-book
+root: intro
+parts:
+  - caption: Basics
+    chapters:
+    - file: getting_started
+    - file: fundamentals
+  - caption: Data Management
+    chapters:
+    - file: vector_ops
+    - file: raster_ops
+  - caption: Advanced Automation
+    chapters:
+    - file: processing_toolbox
+    - file: standalone_scripts

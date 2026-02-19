@@ -1,0 +1,18 @@
+title: PyQGIS Automation Guide
+author: Antigravity AI
+logo: logo.png
+execute:
+  execute_notebooks: force
+html:
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+  home_page_in_toc: true
+  extra_navbar: |
+    <div style="background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); padding: 5px; border-radius: 5px; color: white; text-align: center;">Mastering PyQGIS</div>
+latex:
+  latex_engine: xelatex
+repository:
+  url: https://github.com/OpenGit/qgis
+  branch: main
+  path_to_book: qgis
